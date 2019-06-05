@@ -2,19 +2,19 @@ package isogram
 
 import (
 	"strings"
+	"unicode"
 )
 
 func IsIsogram(input string) bool {
 	lower := strings.ToLower(input)
-	charMap := make(map[string]int)
+	charMap := make(map[rune]int)
 	for _, c := range lower {
-		if _, ok := charMap[string(c)]; ok {
-			if string(c) == "-" || string(c) == " " {
-				break
+		if unicode.IsLetter(c) {
+			if _, ok := charMap[c]; ok {
+				return false
 			}
-			return false
 		}
-		charMap[string(c)] = 1
+		charMap[c] = 1
 	}
 	return true
 }
