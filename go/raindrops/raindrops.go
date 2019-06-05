@@ -14,7 +14,7 @@ func Convert(number int) string {
 	}
 	for _, v := range factors {
 		if number % v == 0 {
-			result = fmt.Sprintf("%s%s", result, factorMap[v])
+			result += factorMap[v]
 		}
 	}
 	if result == "" {
