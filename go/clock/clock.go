@@ -2,6 +2,7 @@ package clock
 
 import "fmt"
 
+// Clock represents time with hours and minutes in 24h format
 type Clock struct {
 	hour int
 	minute int
@@ -23,10 +24,12 @@ func (c Clock) String() string {
 	return fmt.Sprintf("%02d:%02d", c.hour, c.minute)
 }
 
+// Add takes minutes and adds them to the corresponding clock
 func (c Clock) Add(minutes int) Clock {
 	return New(c.hour, c.minute + minutes)
 }
 
+// Subtract takes minutes and subtracts them to the corresponding clock
 func (c Clock) Subtract(minutes int) Clock {
 	return New(c.hour, c.minute - minutes)
 }
