@@ -1,3 +1,6 @@
+// Package clock is a program that can convert hours and minutes
+// to a clock format and perform addition and subtractions of
+// minutes.
 package clock
 
 import "fmt"
